@@ -104,5 +104,4 @@ systemctl enable nginx
 
  }
 judge_mode
-list "$1"
  /etc/nginx/sbin/nginx -V
