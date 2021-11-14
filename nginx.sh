@@ -106,4 +106,8 @@ jemalloc_install
 openssl_download
 nginx_install
 nginx_service
+echo "检查nginx版本与自己安装的版本对不对"
 /etc/nginx/sbin/nginx -V
+echo "检查nginx运行状态"
+systemctl status nginx 
+echo "安装结束"
