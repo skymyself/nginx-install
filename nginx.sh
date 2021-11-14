@@ -47,7 +47,7 @@ wget -c https://www.openssl.org/source/openssl-${openssl_ver}.tar.gz && tar zxf 
  #安装nginx
 nginx-install() {
 cd /etc/
-wget http://nginx.org/download/nginx-${nginx_ver}.tar.gz&&tar xf nginx-${nginx_ver}.tar.gz
+wget http://nginx.org/download/nginx-${nginx_ver}.tar.gz && tar xf nginx-${nginx_ver}.tar.gz
 
 cd nginx-${nginx_ver}
 
