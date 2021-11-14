@@ -36,10 +36,12 @@ $'\r': command not found
 解决方法：
 ```
 sed -i 's/\r//' nginx.sh
+bash nginx.sh
 ```
 或
 ```
 apt-get install dos2unix -y
 dos2unix nginx.sh
+bash nginx.sh
 ```
 
