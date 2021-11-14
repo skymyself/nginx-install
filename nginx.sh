@@ -12,7 +12,6 @@ apt-get upgrade -y
 apt-get install build-essential libpcre3 libpcre3-dev zlib1g-dev libssl-dev wget curl tar unzip cmake git -y
 
 #安装jemalloc
-jemalloc_install() {
 cd /etc || exit
 wget -nc --no-check-certificate https://github.com/jemalloc/jemalloc/releases/download/${jemalloc_ver}/jemalloc-${jemalloc_ver}.tar.bz2
 
@@ -31,19 +30,14 @@ ldconfig
 cd /etc 
 rm -rf jemalloc-${jemalloc_ver} jemalloc-${jemalloc_ver}.tar.bz2
 
-}
 
 #下载openssl
-openssl_download() {
 
 cd /etc
 
 wget -c https://www.openssl.org/source/openssl-${openssl_ver}.tar.gz && tar zxf openssl-${openssl_ver}.tar.gz && rm openssl-${openssl_ver}.tar.gz
 
- }
-
  #安装nginx
-nginx_install() {
 cd /etc/
 wget http://nginx.org/download/nginx-${nginx_ver}.tar.gz&&tar xf nginx-${nginx_ver}.tar.gz
 
@@ -71,10 +65,8 @@ cd nginx-${nginx_ver}
 make
 make install
 
- }
 
  #添加nginx-service系统文件
- nginx_service() {
     cat >$nginx_service <<EOF
 [Unit]
 Description=The NGINX HTTP and reverse proxy server
@@ -98,7 +90,4 @@ systemctl daemon-reload
 systemctl start nginx 
 systemctl enable nginx
 
- }
-nginx_check() {
  /etc/nginx/sbin/nginx -V
- }
