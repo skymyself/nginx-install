@@ -1,18 +1,14 @@
 !#/bin/bash
-
 #定义变量
 jemalloc-ver="5.2.1"
 openssl-ver="1.1.1l"
 nginx-ver="1.20.1"
 nginx-service="/etc/systemd/system/nginx.service"
-
 #更新系统
 apt-get update
 apt-get upgrade -y
-
 #安装依赖
 apt-get install build-essential libpcre3 libpcre3-dev zlib1g-dev libssl-dev wget curl tar unzip cmake git -y
-
 #安装jemalloc
 jemalloc-install() {
 cd /etc
