@@ -20,8 +20,10 @@ openssl-ver="1.1.1l"
 nginx-ver="1.20.1"
 ```
 
-**安裝
+**执行
 ```
+wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh" && chmod +x nginx.sh && bash nginx.sh
+
 bash <(curl -L https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh)
 ```
 
