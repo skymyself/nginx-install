@@ -1,5 +1,11 @@
 #!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
 
+cd "$(
+    cd "$(dirname "$0")" || exit
+    pwd
+)" || exit
 #定义变量
 shell_version="1.1.5.7"
 jemalloc_ver="5.2.1"
