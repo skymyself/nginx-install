@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 #定义变量
 jemalloc_ver="5.2.1"
