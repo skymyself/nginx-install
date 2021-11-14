@@ -6,6 +6,14 @@ openssl_ver="1.1.1l"
 nginx_ver="1.20.1"
 nginx_service="/etc/systemd/system/nginx.service"
 
+#fonts color
+Green="\033[32m"
+Red="\033[31m"
+# Yellow="\033[33m"
+GreenBG="\033[42;37m"
+RedBG="\033[41;37m"
+Font="\033[0m"
+
 #更新系统
 apt-get update
 apt-get upgrade -y
@@ -106,8 +114,8 @@ jemalloc_install
 openssl_download
 nginx_install
 nginx_service
-echo "检查nginx版本与自己安装的版本对不对"
+echo "${GreenBG}检查nginx版本与自己安装的版本对不对${Font}"
 /etc/nginx/sbin/nginx -V
-echo "检查nginx运行状态"
+echo "${GreenBG}检查nginx运行状态${Font}"
 systemctl status nginx 
-echo "安装结束"
+echo "${GreenBG}安装结束${Font}"
