@@ -22,7 +22,7 @@ tar -xvf jemalloc-${jemalloc_ver}.tar.bz2
 
 cd jemalloc-${jemalloc_ver}
 
-apt-get install autogen autoconf
+apt-get install autogen autoconf -y
 
 ./autogen.sh
 
@@ -44,7 +44,7 @@ wget -c https://www.openssl.org/source/openssl-${openssl_ver}.tar.gz && tar zxf 
 
  }
  
- #安装nginx
+#安装nginx
 nginx_install() {
 cd /etc/
 wget http://nginx.org/download/nginx-${nginx_ver}.tar.gz && tar xf nginx-${nginx_ver}.tar.gz
@@ -77,8 +77,8 @@ make install
 
  }
  
- #添加nginx-service系统文件
- nginx_service() {
+#添加nginx-service系统文件
+nginx_service() {
     cat >$nginx_service <<EOF
 [Unit]
 Description=The NGINX HTTP and reverse proxy server
