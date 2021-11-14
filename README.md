@@ -22,7 +22,7 @@ nginx-ver="1.20.1"
 
 **执行
 ```
-wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh" && chmod +x nginx.sh && bash nginx.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh" && chmod +x nginx.sh && ./nginx.sh
 
 ```
 
