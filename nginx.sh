@@ -1,9 +1,11 @@
-#!/bin/bash
+!#/bin/bash
+
 #定义变量
-jemalloc_ver="5.2.1"
-openssl_ver="1.1.1l"
-nginx_ver="1.20.1"
-nginx_service="/etc/systemd/system/nginx.service"
+jemalloc-ver="5.2.1"
+openssl-ver="1.1.1l"
+nginx-ver="1.20.1"
+nginx-service="/etc/systemd/system/nginx.service"
+
 #更新系统
 apt-get update
 apt-get upgrade -y
@@ -12,12 +14,13 @@ apt-get upgrade -y
 apt-get install build-essential libpcre3 libpcre3-dev zlib1g-dev libssl-dev wget curl tar unzip cmake git -y
 
 #安装jemalloc
-cd /etc || exit
-wget -nc --no-check-certificate https://github.com/jemalloc/jemalloc/releases/download/${jemalloc_ver}/jemalloc-${jemalloc_ver}.tar.bz2
+jemalloc-install() {
+cd /etc
+wget -nc --no-check-certificate https://github.com/jemalloc/jemalloc/releases/download/${jemalloc-ver}/jemalloc-${jemalloc-ver}.tar.bz2
 
-tar -xvf jemalloc-${jemalloc_ver}.tar.bz2
+tar -xvf jemalloc-${jemalloc-ver}.tar.bz2
 
-cd jemalloc-${jemalloc_ver}
+cd jemalloc-${jemalloc-ver}
 
 apt-get install autogen autoconf
 
@@ -28,20 +31,25 @@ make install
 ldconfig 
 
 cd /etc 
-rm -rf jemalloc-${jemalloc_ver} jemalloc-${jemalloc_ver}.tar.bz2
+rm -rf jemalloc-${jemalloc-ver} jemalloc-${jemalloc-ver}.tar.bz2
 
+}
 
 #下载openssl
+openssl-download() {
 
 cd /etc
 
-wget -c https://www.openssl.org/source/openssl-${openssl_ver}.tar.gz && tar zxf openssl-${openssl_ver}.tar.gz && rm openssl-${openssl_ver}.tar.gz
+wget -c https://www.openssl.org/source/openssl-${openssl-ver}.tar.gz && tar zxf openssl-${openssl-ver}.tar.gz && rm openssl-${openssl-ver}.tar.gz
+
+ }
 
  #安装nginx
+nginx-install() {
 cd /etc/
-wget http://nginx.org/download/nginx-${nginx_ver}.tar.gz&&tar xf nginx-${nginx_ver}.tar.gz
+wget http://nginx.org/download/nginx-${nginx-ver}.tar.gz&&tar xf nginx-${nginx-ver}.tar.gz
 
-cd nginx-${nginx_ver}
+cd nginx-${nginx-ver}
 
 ./configure \
   --prefix=/etc/nginx \
@@ -56,7 +64,7 @@ cd nginx-${nginx_ver}
   --with-http_v2_module \
   --with-cc-opt=-O3 \
   --with-ld-opt=-ljemalloc \
-  --with-openssl=../openssl-${openssl_ver} \
+  --with-openssl=../openssl-${openssl-ver} \
   --with-stream \
   --with-stream_ssl_module \
   --with-stream=dynamic \
@@ -65,8 +73,10 @@ cd nginx-${nginx_ver}
 make
 make install
 
+ }
 
  #添加nginx-service系统文件
+ nginx-service() {
     cat >$nginx_service <<EOF
 [Unit]
 Description=The NGINX HTTP and reverse proxy server
@@ -90,4 +100,6 @@ systemctl daemon-reload
 systemctl start nginx 
 systemctl enable nginx
 
- /etc/nginx/sbin/nginx -V
+ }
+
+ 
