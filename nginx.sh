@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #定义变量
 shell_version="1.1.5.7"
 jemalloc_ver="5.2.1"
