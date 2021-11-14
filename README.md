@@ -24,3 +24,8 @@ nginx-ver="1.20.1"
 ```
 wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh" && chmod +x nginx.sh && bash nginx.sh
 ```
+或(需要安装有curl)
+```
+# bash <(curl -L https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh)
+
+```
