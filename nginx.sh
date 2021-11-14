@@ -102,4 +102,8 @@ systemctl enable nginx
 
 }
 
+jemalloc_install
+openssl_download
+nginx_install
+nginx_service
 /etc/nginx/sbin/nginx -V
