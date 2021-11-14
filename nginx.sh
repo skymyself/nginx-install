@@ -13,7 +13,7 @@ openssl_ver="1.1.1l"
 nginx_ver="1.20.1"
 nginx_service="/etc/systemd/system/nginx.service"
 
-cd /root
+cd /root || exit
 #更新系统
 apt-get update
 apt-get upgrade -y
@@ -23,7 +23,7 @@ apt-get install build-essential libpcre3 libpcre3-dev zlib1g-dev libssl-dev wget
 
 #安装jemalloc
 jemalloc_install() {
-cd /etc
+cd /etc || exit
 wget -nc --no-check-certificate https://github.com/jemalloc/jemalloc/releases/download/${jemalloc_ver}/jemalloc-${jemalloc_ver}.tar.bz2
 
 tar -xvf jemalloc-${jemalloc_ver}.tar.bz2
