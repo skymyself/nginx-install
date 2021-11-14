@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sed -i 's/\r//' nginx.sh
 #定义变量
 jemalloc_ver="5.2.1"
 openssl_ver="1.1.1l"
