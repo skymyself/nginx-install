@@ -3,7 +3,7 @@ nginx编译安装
 
 **检查最新版本
 
-[查看jemalloc最新版本](https://github.com/jemalloc/jemalloc)
+[查看jemalloc最新版本](https://github.com/jemalloc/jemalloc/releases)
 
 [查看openssl最新版本](https://github.com/openssl/openssl/tags)
 
