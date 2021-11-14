@@ -43,7 +43,7 @@ cd /etc
 wget -c https://www.openssl.org/source/openssl-${openssl_ver}.tar.gz && tar zxf openssl-${openssl_ver}.tar.gz && rm openssl-${openssl_ver}.tar.gz
 
  }
-
+ 
  #安装nginx
 nginx_install() {
 cd /etc/
@@ -71,19 +71,18 @@ mkdir -p /etc/nginx
   --with-stream_ssl_module \
   --with-stream=dynamic \
   --with-stream_ssl_preread_module
-
+  
 make
 make install
 
  }
-
+ 
  #添加nginx-service系统文件
  nginx_service() {
     cat >$nginx_service <<EOF
 [Unit]
 Description=The NGINX HTTP and reverse proxy server
 After=syslog.target network.target remote-fs.target nss-lookup.target
-
 [Service]
 Type=forking
 PIDFile=/etc/nginx/logs/nginx.pid
@@ -98,13 +97,14 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-
 systemctl start nginx 
 systemctl enable nginx
 
- }
+}
+
 jemalloc_install
 openssl_download
 nginx_install
 nginx_service
- /etc/nginx/sbin/nginx -V
+
+/etc/nginx/sbin/nginx -V
