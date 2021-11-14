@@ -30,7 +30,9 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/ngin
 
 ```
 出现如下类似错误：
+```
 $'\r': command not found
+```
 解决方法：
 ```
 sed -i 's/\r//' nginx.sh
