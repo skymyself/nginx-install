@@ -99,5 +99,6 @@ systemctl start nginx
 systemctl enable nginx
 
  }
-
+nginx_check() {
  /etc/nginx/sbin/nginx -V
+ }
