@@ -7,6 +7,7 @@ openssl_ver="1.1.1l"
 nginx_ver="1.20.1"
 nginx_service="/etc/systemd/system/nginx.service"
 
+cd /root
 #更新系统
 apt-get update
 apt-get upgrade -y
