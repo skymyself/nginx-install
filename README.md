@@ -22,6 +22,8 @@ nginx-ver="1.20.1"
 
 **安裝
 ```
+wget -N --no-check-certificate -q -O nginx.sh "https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh" && chmod +x nginx.sh && bash nginx.sh
+
 bash <(curl -L https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh)
 ```
 
