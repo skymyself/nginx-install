@@ -44,7 +44,7 @@ wget -c https://www.openssl.org/source/openssl-${openssl_ver}.tar.gz && tar zxf 
 
  }
  
- #安装nginx
+#安装nginx
 nginx_install() {
 cd /etc/
 wget http://nginx.org/download/nginx-${nginx_ver}.tar.gz && tar xf nginx-${nginx_ver}.tar.gz
@@ -78,7 +78,7 @@ make install
  }
  
  #添加nginx-service系统文件
- nginx_service() {
+nginx_service() {
     cat >$nginx_service <<EOF
 [Unit]
 Description=The NGINX HTTP and reverse proxy server
