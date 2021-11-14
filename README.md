@@ -13,5 +13,5 @@ nginx-ver="1.20.1"
 
 // 安裝
 ```
-# bash <(curl -L https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh)
+bash <(curl -L https://raw.githubusercontent.com/skymyself/nginx-install/main/nginx.sh)
 ```
