@@ -80,13 +80,15 @@ cp /etc/nginx-${nginx_ver}/objs/nginx /etc/nginx/sbin/
 #更新版本
 make upgrade
 
+cd /etc 
+rm -rf openssl-${openssl_ver}
+rm -rf nginx-${nginx_ver}.tar.gz nginx-${nginx_ver}
  }
  
 
 jemalloc_install
 openssl_download
 nginx_install
-nginx_service
 echo "检查nginx版本与自己安装的版本对不对"
 /etc/nginx/sbin/nginx -V
 echo "检查nginx运行状态"
