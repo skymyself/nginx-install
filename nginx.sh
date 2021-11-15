@@ -75,6 +75,9 @@ mkdir -p /etc/nginx
 make
 make install
 
+mkdir -p /etc/nginx/modules/
+cp -r /etc/nginx-${nginx_ver}/objs/ngx_stream_module.so /etc/nginx/modules/
+
 cd /etc 
 rm -rf openssl-${openssl_ver}
 rm -rf nginx-${nginx_ver}.tar.gz nginx-${nginx_ver}
