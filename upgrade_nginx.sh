@@ -84,7 +84,8 @@ cd /etc
 rm -rf openssl-${openssl_ver}
 rm -rf nginx-${nginx_ver}.tar.gz nginx-${nginx_ver}
 
-systemctl start nginx 
+systemctl start nginx
+sleep 6
 systemctl enable nginx
 
  }
@@ -97,5 +98,4 @@ echo "检查nginx版本与自己安装的版本对不对"
 /etc/nginx/sbin/nginx -V
 echo "检查nginx运行状态"
 systemctl status nginx 
-sleep 5
 echo "nginx升级结束"
