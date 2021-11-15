@@ -75,6 +75,10 @@ mkdir -p /etc/nginx
 make
 make install
 
+cd /etc 
+rm -rf openssl-${openssl_ver}
+rm -rf nginx-${nginx_ver}.tar.gz nginx-${nginx_ver}
+
  }
  
 #添加nginx-service系统文件
