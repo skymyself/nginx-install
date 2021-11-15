@@ -22,7 +22,7 @@ nginx-ver="1.20.1"
 
 **一键更新nginx版本
 ```
-wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/nginx-install/upgrade/upnginx.sh" && chmod +x upnginx.sh && upnginx.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/skymyself/nginx-install/upgrade/upgrade_nginx.sh" && chmod +x upgrade_nginx.sh && bash upgrade_nginx.sh
 ```
 
 出现如下类似错误：
