@@ -80,6 +80,8 @@ cp /etc/nginx-${nginx_ver}/objs/nginx /etc/nginx/sbin/
 #更新版本
 make upgrade
 
+cp -r /etc/nginx-${nginx_ver}/objs/ngx_stream_module.so /etc/nginx/modules/
+
 cd /etc 
 rm -rf openssl-${openssl_ver}
 rm -rf nginx-${nginx_ver}.tar.gz nginx-${nginx_ver}
