@@ -101,7 +101,8 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl start nginx 
+systemctl start nginx
+sleep 6
 systemctl enable nginx
 
 }
