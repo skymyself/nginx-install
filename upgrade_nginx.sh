@@ -80,6 +80,7 @@ cp /etc/nginx-${nginx_ver}/objs/nginx /etc/nginx/sbin/
 #更新版本
 make upgrade
 
+mkdir -p /etc/nginx/modules/
 cp -r /etc/nginx-${nginx_ver}/objs/ngx_stream_module.so /etc/nginx/modules/
 
 cd /etc 
