@@ -93,6 +93,7 @@ After=syslog.target network.target remote-fs.target nss-lookup.target
 [Service]
 Type=forking
 PIDFile=/etc/nginx/logs/nginx.pid
+ExecStartPost=/bin/sleep 0.1
 ExecStartPre=/etc/nginx/sbin/nginx -t
 ExecStart=/etc/nginx/sbin/nginx -c /etc/nginx/conf/nginx.conf
 ExecReload=/etc/nginx/sbin/nginx -s reload
