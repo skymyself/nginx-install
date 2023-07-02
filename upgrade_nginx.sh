@@ -3,7 +3,7 @@
 #定义变量
 jemalloc_ver="5.2.1"
 openssl_ver="1.1.1l"
-nginx_ver="1.20.1"
+nginx_ver="1.24.0"
 
 #停止nginx
 systemctl stop nginx
