@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #定义变量
-jemalloc_ver="5.2.1"
-openssl_ver="1.1.1l"
-nginx_ver="1.20.1"
+jemalloc_ver="5.3.0"
+openssl_ver="3.2.1"
+nginx_ver="1.24.0"
 nginx_service="/etc/systemd/system/nginx.service"
 
 #更新系统
