@@ -2,8 +2,8 @@
 
 #定义变量
 jemalloc_ver="5.3.0"
-openssl_ver="3.3.1"
-nginx_ver="1.26.1"
+openssl_ver="3.3.2"
+nginx_ver="1.26.2"
 nginx_service="/etc/systemd/system/nginx.service"
 
 #更新系统
