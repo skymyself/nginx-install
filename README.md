@@ -16,8 +16,8 @@ nginx编译安装
 脚本当前安装的版本为：
 ```
 jemalloc-ver="5.2.1"
-openssl-ver="1.1.1l"
-nginx-ver="1.20.1"
+openssl-ver="3.3.2"
+nginx-ver="1.26.2"
 ```
 
 **执行
